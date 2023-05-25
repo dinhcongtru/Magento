@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+
+        <add id="Mageplaza_DevelopmentGuide::post"
+             title="Manage Posts"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="30"
+             action="mageplaza_developmentguide/post"
+             resource="Mageplaza_DevelopmentGuide::post"
+             parent="Mageplaza_DevelopmentGuide::content"/>
+
+        <add id="Mageplaza_DevelopmentGuide::add"
+             title="Add Data"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="31"
+             action="mageplaza_developmentguide/model/crud"
+             resource="Mageplaza_DevelopmentGuide::add"
+             parent="Mageplaza_DevelopmentGuide::content"/>
+
+        <add id="Mageplaza_DevelopmentGuide::update"
+             title="Update Data"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="32"
+             action="mageplaza_developmentguide/model/update"
+             resource="Mageplaza_DevelopmentGuide::update"
+             parent="Mageplaza_DevelopmentGuide::content"/>
+
+        <add id="Mageplaza_DevelopmentGuide::delete"
+             title="Delete Data"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="33"
+             action="mageplaza_developmentguide/model/delete"
+             resource="Mageplaza_DevelopmentGuide::delete"
+             parent="Mageplaza_DevelopmentGuide::content"/>
+
+
+        <add id="Mageplaza_DevelopmentGuide::content"
+             title="Mageplaza"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="15"
+             parent="Magento_Backend::content"
+             resource="Mageplaza_DevelopmentGuide::content"/>
+
+
+        <add id="Mageplaza_DevelopmentGuide::store"
+             title="Mageplazaa"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="99"
+             parent="Magento_Backend::stores"
+             resource="Mageplaza_DevelopmentGuide::store"/>
+
+        <add id="Mageplaza_DevelopmentGuide::hello_configuration"
+             title="Configuration"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="99"
+             parent="Mageplaza_DevelopmentGuide::store"
+             action="adminhtml/system_config/edit/section/developmentguide"
+             resource="Mageplaza_DevelopmentGuide::hello_configuration"/>
+
+        <add id="Mageplaza_DevelopmentGuide::mageposts"
+             title="Posts"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="51"
+             resource="Mageplaza_DevelopmentGuide::mageposts"/>
+
+        <add id="Mageplaza_DevelopmentGuide::manapost"
+             title="Manager Post"
+             module="Mageplaza_DevelopmentGuide"
+             sortOrder="51"
+             parent="Mageplaza_DevelopmentGuide::mageposts"
+             action="mageplaza_developmentguide/post/config"
+             resource="Mageplaza_DevelopmentGuide::manapost"/>
+    </menu>
+</config>

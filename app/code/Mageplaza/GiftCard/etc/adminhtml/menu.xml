@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mageplaza_GiftCard::mageplaza"
+             title="Mageplaza"
+             module="Mageplaza_GiftCard"
+             sortOrder="51"
+             resource="Mageplaza_GiftCard::mageplaza"/>
+
+        <add id="Mageplaza_GiftCard::card"
+             title="Gift Card"
+             module="Mageplaza_GiftCard"
+             sortOrder="10"
+             parent="Mageplaza_GiftCard::mageplaza"
+             resource="Mageplaza_GiftCard::card"/>
+
+        <add id="Mageplaza_GiftCard::managecode"
+             title="Manage Codes"
+             module="Mageplaza_GiftCard"
+             sortOrder="10"
+             parent="Mageplaza_GiftCard::card"
+             action="giftcard/posts/index"
+             resource="Mageplaza_GiftCard::managecode"/>
+
+        <add id="Mageplaza_GiftCard::configuration"
+             title="Configuration"
+             module="Mageplaza_GiftCard"
+             sortOrder="20"
+             parent="Mageplaza_GiftCard::card"
+             action="admin/system_config/"
+             resource="Mageplaza_GiftCard::configuration"/>
+    </menu>
+</config>

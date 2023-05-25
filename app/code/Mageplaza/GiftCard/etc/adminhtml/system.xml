@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mageplaza" translate="label" sortOrder="10">
+            <label>Mageplaza Extentions</label>
+        </tab>
+        <section id="giftcard" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Gift Card</label>
+            <tab>mageplaza</tab>
+            <resource>Mageplaza_GiftCard::giftcard</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable_giftcard" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Gift Card</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If this field is NO, all module functionality outside of the UI will not work.</comment>
+                </field>
+                <field id="allow_gift_checkout" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Allow used Gift Card at Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If this field is NO, the customer will not be able to apply the gift code.</comment>
+                </field>
+                <field id="enable_redeem" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Allow Redeem Gift Card</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>allow customers to transfer the amount of the gift code to their balance.</comment>
+                </field>
+            </group>
+            <group id="general_code" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Code Configuration</label>
+                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Code Length</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-number validate-digits validate-default-grid-size validate-greater-than-one
+                    </validate>
+                    <comment>The default length of the gift code when creating a gift code in the admin or when the
+                        customer buys a gift card product.
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

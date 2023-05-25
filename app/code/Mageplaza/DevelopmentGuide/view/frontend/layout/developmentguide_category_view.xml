@@ -1,0 +1,12 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Category Posts</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Mageplaza\DevelopmentGuide\Block\CategoryPosts" name="category_posts"
+                   template="Mageplaza_DevelopmentGuide::category_posts.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

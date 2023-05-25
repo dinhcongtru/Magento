@@ -1,0 +1,133 @@
+<?php
+
+/**
+ * @var \Mageplaza\DevelopmentGuide\Block\Form\Category $block
+ */
+
+use Mageplaza\DevelopmentGuide\Block\Form\Category;
+
+
+?>
+<style>
+    .form-create-account {
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    /*.page-main{*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    align-items: center;*/
+    /*}*/
+    .form-create-account legend {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .legend {
+        text-align: center;
+    }
+
+    .form-create-account .field {
+        margin-bottom: 20px;
+    }
+
+    .form-create-account label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-create-account .input-text {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-create-account .actions-toolbar {
+        margin-top: 20px;
+    }
+
+    .form-create-account .actions-toolbar .primary {
+        text-align: center;
+    }
+
+    .form-create-account .actions-toolbar .submit {
+        background-color: #337ab7;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-create-account .actions-toolbar .submit:hover {
+        background-color: #23527c;
+    }
+</style>
+
+<form action="<?= $block->getBaseUrl() . 'developmentguide/post/save/' ?>" method="post" id="form-validate"
+      enctype="multipart/form-data" class="form create account" onsubmit="return validateCategoryField();">
+    <fieldset class="fieldset create info">
+        <legend class="legend"><span><?php /* @escapeNotVerified */
+                echo __('THÔNG TIN') ?></span></legend>
+        <br>
+        <div class="field required">
+            <label for="url_key" class="label"><span><?php /* @escapeNotVerified */
+                    echo __('Url Key') ?></span></label>
+            <div class="control">
+                <input type="text" name="url_key" id="url_key" title="<?php /* @escapeNotVerified */
+                echo __('Url Key') ?>" placeholder="Vui lòng nhập Url Key....." class="input-text" required>
+            </div>
+        </div>
+        <div class="field required">
+            <label for="name" class="label"><span><?php /* @escapeNotVerified */
+                    echo __('Name') ?></span></label>
+            <div class="control">
+                <input type="text" name="name" id="name" title="<?php /* @escapeNotVerified */
+                echo __('Name') ?>" placeholder="Vui lòng nhập tên ......" class="input-text" required>
+            </div>
+        </div>
+        <div class="field required">
+            <label for="post_content" class="label"><span><?php /* @escapeNotVerified */
+                    echo __('Post Content') ?></span></label>
+            <div class="control">
+                <input type="text" name="post_content" id="post_content" title="<?php /* @escapeNotVerified */
+                echo __('Post Content') ?>" placeholder="Vui lòng nhập Email...." class="input-text" required>
+            </div>
+        </div>
+        <div class="field required">
+            <label for="tags" class="label"><span><?php /* @escapeNotVerified */
+                    echo __('Tags') ?></span></label>
+            <div class="control">
+                <input type="text" name="tags" id="tags" title="<?php /* @escapeNotVerified */
+                echo __('Tags') ?>" placeholder="Vui lòng nhập tags...." class="input-text" required>
+            </div>
+        </div>
+        <div class="field required">
+            <label for="categories" class="label"><span><?php /* @escapeNotVerified */
+                    echo __('Categories') ?></span></label>
+            <div class="control">
+                <input type="text" name="categories" title="<?php /* @escapeNotVerified */
+                echo __('Categories') ?>" id="categories" placeholder="Vui lòng nhập Categories....." class="input-text"
+                       required>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" onclick="validateCategoryField()" title="<?php /* @escapeNotVerified */
+            echo __('Submit') ?>" name="submit" class="action submit primary"><span><?php /* @escapeNotVerified */
+                    echo __('Submit') ?></span></button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

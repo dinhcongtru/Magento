@@ -1,0 +1,82 @@
+<?php
+/**
+ * @var \Mageplaza\GiftCard\Block\Index\Index $block ;
+ */
+?>
+<div class="block block-dashboard-info" style="margin-bottom: 100px">
+    <div class="block-title"><strong>Gift Card Information</strong></div>
+    <div class="block-content">
+        <div class="box box-information">
+            <strong class="box-title">
+                <span>Blance</span>
+            </strong>
+            <div class="box-content">
+                <p><?php echo $block->formattedPrice($block->getHistoryCollection()->getFirstItem()->getGiftcardBalance()) ?></p>
+            </div>
+        </div>
+        <?php $allow = $block->allowRedeem();
+        if ($allow == 1) {
+            ?>
+            <div class="box box-newsletter">
+                <strong class="box-title">
+                    <span>Redeem</span>
+                </strong>
+                <div class="box-content">
+                    <form class="form subscribe" novalidate="novalidate"
+                          action="<?= $block->getBaseUrl() . 'giftcard/customer/save' ?>" method="post"
+                          id="newsletter-validate-detail" style="display: flex">
+                        <div class="field newsletter">
+                            <div class="control">
+                                <label for="newsletter">
+                                    <input name="redeem" type="text" id="newsletter" placeholder="Enter Gift Card Code"
+                                           data-validate="{required:true">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="action subscribe primary" title="Redeem" type="submit"
+                                    aria-label="Subscribe">
+                                <span>Redeem</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+</div>
+<div class="block block-dashboard-addresses">
+    <div class="block-title">
+        <strong>History</strong>
+        <a class="action edit" href="#"><span>View All</span></a>
+    </div>
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history" id="my-orders-table">
+            <thead>
+            <tr>
+                <th scope="col" class="col date">Date</th>
+                <th scope="col" class="col id">Code</th>
+                <th scope="col" class="col total">Amount</th>
+                <th scope="col" class="col actions">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($block->getHistoryCollection() as $item) {
+                echo ' <tr>
+                    <td>' . $block->formattedDateTime($item->getCreatedAt()) . '</td>
+                    <td>' . $item->getCode() . '</td>
+                    <td>' . $block->formattedPrice($item->getBalance()) . '</td>
+                    <td>' . $item->getAction() . '</td>
+                </tr> ';
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

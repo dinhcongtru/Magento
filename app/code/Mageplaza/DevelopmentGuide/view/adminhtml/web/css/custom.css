@@ -1,0 +1,4 @@
+.admin__menu .submenu .column:only-of-type strong.submenu-group-title {
+    display: block
+}
+
